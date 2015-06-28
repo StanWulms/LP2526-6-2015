@@ -68,11 +68,9 @@
             this.tbSinBeschrijving = new System.Windows.Forms.TextBox();
             this.tbSinX = new System.Windows.Forms.TextBox();
             this.tbSinY = new System.Windows.Forms.TextBox();
-            this.tbSinBootID = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -82,6 +80,9 @@
             this.btnIncidentVerwijderen = new System.Windows.Forms.Button();
             this.btnIncidentWijzigen = new System.Windows.Forms.Button();
             this.btnIncidentToevoegen = new System.Windows.Forms.Button();
+            this.btnShow = new System.Windows.Forms.Button();
+            this.lbMissieID = new System.Windows.Forms.Label();
+            this.tbMissieID = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblBootID
@@ -151,10 +152,12 @@
             // lbHOPEmissies
             // 
             this.lbHOPEmissies.FormattingEnabled = true;
+            this.lbHOPEmissies.HorizontalScrollbar = true;
             this.lbHOPEmissies.ItemHeight = 16;
             this.lbHOPEmissies.Location = new System.Drawing.Point(353, 70);
             this.lbHOPEmissies.Name = "lbHOPEmissies";
             this.lbHOPEmissies.Size = new System.Drawing.Size(244, 212);
+            this.lbHOPEmissies.Sorted = true;
             this.lbHOPEmissies.TabIndex = 11;
             // 
             // btnHopeToevoegen
@@ -175,6 +178,7 @@
             this.btnHopeWijzigen.TabIndex = 13;
             this.btnHopeWijzigen.Text = "Wijzigen";
             this.btnHopeWijzigen.UseVisualStyleBackColor = true;
+            this.btnHopeWijzigen.Click += new System.EventHandler(this.btnHopeWijzigen_Click);
             // 
             // btnHopeVerwijderen
             // 
@@ -184,6 +188,7 @@
             this.btnHopeVerwijderen.TabIndex = 14;
             this.btnHopeVerwijderen.Text = "Verwijderen";
             this.btnHopeVerwijderen.UseVisualStyleBackColor = true;
+            this.btnHopeVerwijderen.Click += new System.EventHandler(this.btnHopeVerwijderen_Click);
             // 
             // lblVertrektijd
             // 
@@ -227,6 +232,7 @@
             this.btnMetingVerwijderen.TabIndex = 31;
             this.btnMetingVerwijderen.Text = "Verwijderen";
             this.btnMetingVerwijderen.UseVisualStyleBackColor = true;
+            this.btnMetingVerwijderen.Click += new System.EventHandler(this.btnMetingVerwijderen_Click_1);
             // 
             // btnMetingWijzigen
             // 
@@ -236,6 +242,7 @@
             this.btnMetingWijzigen.TabIndex = 30;
             this.btnMetingWijzigen.Text = "Wijzigen";
             this.btnMetingWijzigen.UseVisualStyleBackColor = true;
+            this.btnMetingWijzigen.Click += new System.EventHandler(this.btnMetingWijzigen_Click);
             // 
             // btnMetingToevoegen
             // 
@@ -250,10 +257,12 @@
             // lbMetingen
             // 
             this.lbMetingen.FormattingEnabled = true;
+            this.lbMetingen.HorizontalScrollbar = true;
             this.lbMetingen.ItemHeight = 16;
             this.lbMetingen.Location = new System.Drawing.Point(976, 70);
             this.lbMetingen.Name = "lbMetingen";
             this.lbMetingen.Size = new System.Drawing.Size(244, 212);
+            this.lbMetingen.Sorted = true;
             this.lbMetingen.TabIndex = 28;
             // 
             // tbMetingBeschrijving
@@ -368,6 +377,7 @@
             this.btnSinVerwijderen.TabIndex = 49;
             this.btnSinVerwijderen.Text = "Verwijderen";
             this.btnSinVerwijderen.UseVisualStyleBackColor = true;
+            this.btnSinVerwijderen.Click += new System.EventHandler(this.btnSinVerwijderen_Click);
             // 
             // btnSinWijzigen
             // 
@@ -377,6 +387,7 @@
             this.btnSinWijzigen.TabIndex = 48;
             this.btnSinWijzigen.Text = "Wijzigen";
             this.btnSinWijzigen.UseVisualStyleBackColor = true;
+            this.btnSinWijzigen.Click += new System.EventHandler(this.btnSinWijzigen_Click);
             // 
             // btnSinToevoegen
             // 
@@ -386,14 +397,17 @@
             this.btnSinToevoegen.TabIndex = 47;
             this.btnSinToevoegen.Text = "SIN Toevoegen";
             this.btnSinToevoegen.UseVisualStyleBackColor = true;
+            this.btnSinToevoegen.Click += new System.EventHandler(this.btnSinToevoegen_Click);
             // 
             // lbSINmissies
             // 
             this.lbSINmissies.FormattingEnabled = true;
+            this.lbSINmissies.HorizontalScrollbar = true;
             this.lbSINmissies.ItemHeight = 16;
             this.lbSINmissies.Location = new System.Drawing.Point(353, 389);
             this.lbSINmissies.Name = "lbSINmissies";
             this.lbSINmissies.Size = new System.Drawing.Size(244, 212);
+            this.lbSINmissies.Sorted = true;
             this.lbSINmissies.TabIndex = 46;
             // 
             // tbSinBeschrijving
@@ -416,13 +430,6 @@
             this.tbSinY.Name = "tbSinY";
             this.tbSinY.Size = new System.Drawing.Size(100, 22);
             this.tbSinY.TabIndex = 43;
-            // 
-            // tbSinBootID
-            // 
-            this.tbSinBootID.Location = new System.Drawing.Point(164, 389);
-            this.tbSinBootID.Name = "tbSinBootID";
-            this.tbSinBootID.Size = new System.Drawing.Size(100, 22);
-            this.tbSinBootID.TabIndex = 42;
             // 
             // label13
             // 
@@ -450,15 +457,6 @@
             this.label15.Size = new System.Drawing.Size(93, 17);
             this.label15.TabIndex = 39;
             this.label15.Text = "Y-coördinaat:";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(40, 389);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(58, 17);
-            this.label16.TabIndex = 38;
-            this.label16.Text = "Boot ID:";
             // 
             // label17
             // 
@@ -498,19 +496,21 @@
             // 
             // rtbIncidentBeschrijving
             // 
-            this.rtbIncidentBeschrijving.Location = new System.Drawing.Point(689, 389);
+            this.rtbIncidentBeschrijving.Location = new System.Drawing.Point(689, 422);
             this.rtbIncidentBeschrijving.Name = "rtbIncidentBeschrijving";
-            this.rtbIncidentBeschrijving.Size = new System.Drawing.Size(246, 201);
+            this.rtbIncidentBeschrijving.Size = new System.Drawing.Size(246, 168);
             this.rtbIncidentBeschrijving.TabIndex = 58;
             this.rtbIncidentBeschrijving.Text = "";
             // 
             // lbIncidenten
             // 
             this.lbIncidenten.FormattingEnabled = true;
+            this.lbIncidenten.HorizontalScrollbar = true;
             this.lbIncidenten.ItemHeight = 16;
             this.lbIncidenten.Location = new System.Drawing.Point(976, 378);
             this.lbIncidenten.Name = "lbIncidenten";
             this.lbIncidenten.Size = new System.Drawing.Size(244, 212);
+            this.lbIncidenten.Sorted = true;
             this.lbIncidenten.TabIndex = 59;
             // 
             // btnIncidentVerwijderen
@@ -521,6 +521,7 @@
             this.btnIncidentVerwijderen.TabIndex = 62;
             this.btnIncidentVerwijderen.Text = "Verwijderen";
             this.btnIncidentVerwijderen.UseVisualStyleBackColor = true;
+            this.btnIncidentVerwijderen.Click += new System.EventHandler(this.btnIncidentVerwijderen_Click);
             // 
             // btnIncidentWijzigen
             // 
@@ -530,6 +531,7 @@
             this.btnIncidentWijzigen.TabIndex = 61;
             this.btnIncidentWijzigen.Text = "Wijzigen";
             this.btnIncidentWijzigen.UseVisualStyleBackColor = true;
+            this.btnIncidentWijzigen.Click += new System.EventHandler(this.btnIncidentWijzigen_Click);
             // 
             // btnIncidentToevoegen
             // 
@@ -539,12 +541,42 @@
             this.btnIncidentToevoegen.TabIndex = 60;
             this.btnIncidentToevoegen.Text = "Incident Toevoegen";
             this.btnIncidentToevoegen.UseVisualStyleBackColor = true;
+            this.btnIncidentToevoegen.Click += new System.EventHandler(this.btnIncidentToevoegen_Click);
+            // 
+            // btnShow
+            // 
+            this.btnShow.Location = new System.Drawing.Point(565, 13);
+            this.btnShow.Name = "btnShow";
+            this.btnShow.Size = new System.Drawing.Size(164, 23);
+            this.btnShow.TabIndex = 63;
+            this.btnShow.Text = "Show";
+            this.btnShow.UseVisualStyleBackColor = true;
+            this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
+            // 
+            // lbMissieID
+            // 
+            this.lbMissieID.AutoSize = true;
+            this.lbMissieID.Location = new System.Drawing.Point(689, 389);
+            this.lbMissieID.Name = "lbMissieID";
+            this.lbMissieID.Size = new System.Drawing.Size(45, 17);
+            this.lbMissieID.TabIndex = 64;
+            this.lbMissieID.Text = "Sin ID";
+            // 
+            // tbMissieID
+            // 
+            this.tbMissieID.Location = new System.Drawing.Point(787, 389);
+            this.tbMissieID.Name = "tbMissieID";
+            this.tbMissieID.Size = new System.Drawing.Size(100, 22);
+            this.tbMissieID.TabIndex = 65;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1232, 709);
+            this.ClientSize = new System.Drawing.Size(1232, 710);
+            this.Controls.Add(this.tbMissieID);
+            this.Controls.Add(this.lbMissieID);
+            this.Controls.Add(this.btnShow);
             this.Controls.Add(this.btnIncidentVerwijderen);
             this.Controls.Add(this.btnIncidentWijzigen);
             this.Controls.Add(this.btnIncidentToevoegen);
@@ -563,11 +595,9 @@
             this.Controls.Add(this.tbSinBeschrijving);
             this.Controls.Add(this.tbSinX);
             this.Controls.Add(this.tbSinY);
-            this.Controls.Add(this.tbSinBootID);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.label16);
             this.Controls.Add(this.dtpMetingTijdstip);
             this.Controls.Add(this.dtpHopeAankomst);
             this.Controls.Add(this.dtpHopeVertrek);
@@ -648,11 +678,9 @@
         private System.Windows.Forms.TextBox tbSinBeschrijving;
         private System.Windows.Forms.TextBox tbSinX;
         private System.Windows.Forms.TextBox tbSinY;
-        private System.Windows.Forms.TextBox tbSinBootID;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
@@ -662,6 +690,9 @@
         private System.Windows.Forms.Button btnIncidentVerwijderen;
         private System.Windows.Forms.Button btnIncidentWijzigen;
         private System.Windows.Forms.Button btnIncidentToevoegen;
+        private System.Windows.Forms.Button btnShow;
+        private System.Windows.Forms.Label lbMissieID;
+        private System.Windows.Forms.TextBox tbMissieID;
     }
 }
 

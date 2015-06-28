@@ -47,6 +47,18 @@ namespace LifePerformance_StanWulms_S23
             db.MaakMeting(id, beschrijving, x, y, tijdstip);
         }
 
+        public void MetingUpdaten(int metingID, int id, string beschrijving, int x, int y, DateTime tijdstip)
+        {
+            db = new Database();
+            db.UpdateMeting(metingID, id, beschrijving, x, y, tijdstip);
+        }
+
+        public void MetingVerwijderen(int id)
+        {
+            db = new Database();
+            db.DeleteMeting(id);
+        }
+
         public override string ToString()
         {
             return "ID: " + ID + " - " + "Beschrijving: " + Beschrijving;
