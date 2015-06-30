@@ -551,7 +551,7 @@ namespace LifePerformance_StanWulms_S23
                 otn2.Commit();
             }
             catch (OracleException ex) { System.Windows.Forms.MessageBox.Show("Error: " + ex.Message); }
-            catch { System.Windows.Forms.MessageBox.Show("erorororororroor"); }
+            catch { System.Windows.Forms.MessageBox.Show("Error try again."); }
         }
 
         /// <summary>

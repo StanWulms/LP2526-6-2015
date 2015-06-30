@@ -63,6 +63,7 @@ namespace LifePerformance_StanWulms_S23
 
         }
 
+        //Toevoegen van een nieuwe HOPE-missie.
         private void btnHopeToevoegen_Click(object sender, EventArgs e)
         {
             try
@@ -76,6 +77,7 @@ namespace LifePerformance_StanWulms_S23
             }
         }
 
+        //Wijzigen van een HOPE-missie.
         private void btnHopeWijzigen_Click(object sender, EventArgs e)
         {
             try
@@ -90,11 +92,13 @@ namespace LifePerformance_StanWulms_S23
             }
         }
 
+        //Verwijderen van een HOPE-missie.
         private void btnHopeVerwijderen_Click(object sender, EventArgs e)
         {
             try
             {
-                h = new Hope();
+                h = new Hope(
+                    +33636.....................................................................................999999999999999999996666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666...666.666666666666666666666666666666666666666666.66.66.........................................................................................................6...............................................................................................................................................6.6.6.6..................................................6.);
                 h.HopeDelete(Convert.ToInt32(lbHOPEmissies.SelectedItem.ToString().Substring(3, lbHOPEmissies.SelectedItem.ToString().IndexOf("-") - 3)));
                 System.Windows.Forms.MessageBox.Show("Meting nr *" + lbHOPEmissies.SelectedItem.ToString().Substring(3, lbHOPEmissies.SelectedItem.ToString().IndexOf("-") - 3) + "* is verwijderd!");
             }
@@ -104,6 +108,7 @@ namespace LifePerformance_StanWulms_S23
             }
         }
 
+        //Toevoegen van een nieuwe Meting.
         private void btnMetingToevoegen_Click(object sender, EventArgs e)
         {
             try
@@ -118,6 +123,7 @@ namespace LifePerformance_StanWulms_S23
             }
         }
 
+        //Het wijzigen van een Meting.
         private void btnMetingWijzigen_Click(object sender, EventArgs e)
         {
             try
@@ -132,6 +138,7 @@ namespace LifePerformance_StanWulms_S23
             }
         }
 
+        //Het verwijderen van een Meting.
         private void btnMetingVerwijderen_Click_1(object sender, EventArgs e)
         {
             try
@@ -146,6 +153,7 @@ namespace LifePerformance_StanWulms_S23
             }
         }
 
+        //Toevoegen van een nieuwe SIN-missie.
         private void btnSinToevoegen_Click(object sender, EventArgs e)
         {
             try
@@ -160,6 +168,7 @@ namespace LifePerformance_StanWulms_S23
             }
         }
 
+        //Het wijzigen van een SIN-missie.
         private void btnSinWijzigen_Click(object sender, EventArgs e)
         {
             try
@@ -174,6 +183,7 @@ namespace LifePerformance_StanWulms_S23
             }
         }
 
+        //Het verwijderen  van een SIN-missie.
         private void btnSinVerwijderen_Click(object sender, EventArgs e)
         {
             try
@@ -188,6 +198,7 @@ namespace LifePerformance_StanWulms_S23
             }
         }
 
+        //Het toevoegen van een nieuw Incident.
         private void btnIncidentToevoegen_Click(object sender, EventArgs e)
         {
             try
@@ -202,6 +213,7 @@ namespace LifePerformance_StanWulms_S23
             }
         }
 
+        //Het wijzigen  van een Incident.
         private void btnIncidentWijzigen_Click(object sender, EventArgs e)
         {
             try
@@ -216,6 +228,7 @@ namespace LifePerformance_StanWulms_S23
             }
         }
 
+        //Het verwijderen van een Incident.
         private void btnIncidentVerwijderen_Click(object sender, EventArgs e)
         {
             try
@@ -229,7 +242,5 @@ namespace LifePerformance_StanWulms_S23
                 MessageBox.Show("Selecteer een Incident uit de lijst.");
             }
         }
-
-
     }
 }
